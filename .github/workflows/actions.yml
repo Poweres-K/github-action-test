@@ -1,0 +1,15 @@
+name: action workflow
+
+on: [push]
+
+jobs:
+  run-hello-world:
+    runs-on: ubuntu-latest
+    steps:
+      - name: use action
+        id: helloworld
+        uses: actions/hello-world-javascript-action@main
+        with:
+          who-to-greet: "Poweres"
+      - name: log output
+        run: echo "${{steps.helloworld.outputs.time}}"
