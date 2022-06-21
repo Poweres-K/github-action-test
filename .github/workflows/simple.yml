@@ -16,5 +16,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: use bash shell
-        run: echo "using shell"
+        run: pwd
         shell: bash
+      - name: use Power shell
+        run: Get-Location
