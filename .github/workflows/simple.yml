@@ -3,7 +3,7 @@ name: shell commands
 on: [push]
 
 jobs:
-  run-shell-command:
+  run-ubuntu:
     runs-on: ubuntu-latest
     steps:
       - name: echo name
@@ -12,3 +12,9 @@ jobs:
         run: |
           node -v
           npm -v
+  run-window:
+    runs-on: windows-latest
+    steps:
+      - name: use bash shell
+        run: echo "using shell"
+        shell: bash
