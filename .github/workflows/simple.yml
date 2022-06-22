@@ -1,6 +1,9 @@
 name: shell commands
 
-on: [push]
+on:
+  push:
+    branches:
+      - dev
 
 jobs:
   run-ubuntu:
