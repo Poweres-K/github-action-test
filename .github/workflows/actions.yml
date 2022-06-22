@@ -1,16 +1,17 @@
 name: action workflow
 
-on: [push]
+on: [push, pull_request]
 
 jobs:
   run-hello-world:
     runs-on: ubuntu-latest
     steps:
+      - name: show head ref
+        run: echo "${{ github.head_ref }}"
       - name: clone repo
         uses: actions/checkout@v3
       - name: list file
         run: ls -a
-
       - name: use action
         id: helloworld
         uses: actions/hello-world-javascript-action@main
