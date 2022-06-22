@@ -6,6 +6,11 @@ jobs:
   run-hello-world:
     runs-on: ubuntu-latest
     steps:
+      - name: clone repo
+        uses: actions/checkout@v3
+      - name: list file
+        run: ls -a
+
       - name: use action
         id: helloworld
         uses: actions/hello-world-javascript-action@main
